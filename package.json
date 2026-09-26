@@ -1,0 +1,46 @@
+{
+  "name": "tool-depthmap-generator",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Free, open-source depth map generator that runs entirely in the browser: Depth Anything V2 and 3 on ONNX Runtime Web (WebGPU or WebAssembly).",
+  "keywords": [
+    "depth-map",
+    "depth-estimation",
+    "depth-anything",
+    "onnxruntime-web",
+    "webgpu",
+    "parallax",
+    "nextjs"
+  ],
+  "homepage": "https://github.com/Kuartz-studio/tool-depthmap-generator#readme",
+  "bugs": {
+    "url": "https://github.com/Kuartz-studio/tool-depthmap-generator/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Kuartz-studio/tool-depthmap-generator.git"
+  },
+  "license": "MIT",
+  "author": "Kuartz Studio (https://kuartz.studio)",
+  "engines": {
+    "node": ">=20.9"
+  },
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "typecheck": "tsc --noEmit",
+    "test": "node --test tests/*.test.mjs"
+  },
+  "dependencies": {
+    "next": "^16.3.6",
+    "react": "^19.3.0",
+    "react-dom": "^19.3.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.20.4",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "typescript": "^7.0.2"
+  }
+}

@@ -1,0 +1,40 @@
+name: Bug report
+description: Something does not work as expected
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: Thanks for taking the time to report a bug. English or French, both are fine.
+  - type: textarea
+    id: what
+    attributes:
+      label: What happened?
+      description: What did you do, what did you expect, and what happened instead?
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      placeholder: |
+        1. Import a 4000 × 3000 JPEG
+        2. Pick Depth Anything 3 Base and the HD quality
+        3. Click "Générer la depth map"
+  - type: input
+    id: browser
+    attributes:
+      label: Browser, OS and GPU
+      placeholder: Chrome 140 on macOS 26, Apple M2
+    validations:
+      required: true
+  - type: input
+    id: engine
+    attributes:
+      label: Engine chip
+      description: The text in the top right corner of the tool, for example "DA-V2 Small · GPU FP16" or "Pas de WebGPU : calcul sur CPU".
+  - type: textarea
+    id: console
+    attributes:
+      label: Console errors
+      description: Open the developer tools (F12 or Cmd+Option+I) and paste any errors.
+      render: text

@@ -1,3 +1,5 @@
+import { CookieSettingsButton } from '@/components/cookie-settings-button';
+import { gtmId } from '@/lib/analytics';
 import { site } from '@/lib/site';
 
 export function SiteFooter() {
@@ -19,6 +21,12 @@ export function SiteFooter() {
           <a href={`${site.repo}/issues`} target="_blank" rel="noopener">
             Signaler un bug
           </a>
+          {gtmId && (
+            <>
+              {' · '}
+              <CookieSettingsButton />
+            </>
+          )}
         </p>
       </div>
     </footer>

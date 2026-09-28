@@ -1,6 +1,6 @@
 # Security policy
 
-Kuartz Depth runs entirely in the browser: images are processed locally and never sent to a server. The only network requests download ONNX Runtime Web (jsDelivr) and the model weights (Hugging Face).
+Kuartz Depth runs entirely in the browser: images are processed locally and never sent to a server. The tool itself only downloads ONNX Runtime Web (jsDelivr) and the model weights (Hugging Face). The hosted version also loads Google Tag Manager for audience measurement; Google Analytics cookies are only set after consent.
 
 ## Reporting a vulnerability
 

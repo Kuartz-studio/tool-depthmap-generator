@@ -2,7 +2,7 @@
 export const faq = [
   {
     q: 'Mes images sont-elles envoyées sur un serveur ?',
-    a: "Non. Tout le calcul se fait dans ton navigateur : l'image ne quitte jamais ta machine. Seuls le moteur ONNX Runtime et les fichiers du modèle sont téléchargés (depuis jsDelivr et Hugging Face), une seule fois, puis gardés en cache.",
+    a: "Non. Tout se passe dans ton navigateur : l'image ne quitte jamais ta machine. Pour le calcul, seuls le moteur ONNX Runtime et les fichiers du modèle sont téléchargés (depuis jsDelivr et Hugging Face), une seule fois, puis gardés en cache.",
   },
   {
     q: 'Kuartz Depth est-il vraiment gratuit ?',

@@ -1,5 +1,7 @@
 import type { Metadata, Viewport } from 'next';
 import { Instrument_Sans, JetBrains_Mono } from 'next/font/google';
+import { CookieBanner } from '@/components/cookie-banner';
+import { consentDefaultScript, gtmId, gtmScript } from '@/lib/analytics';
 import { site } from '@/lib/site';
 import './globals.css';
 
@@ -51,7 +53,25 @@ export const viewport: Viewport = {
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="fr" className={`${sans.variable} ${mono.variable}`}>
-      <body>{children}</body>
+      <head>
+        {/* Consent defaults must be queued before GTM. Not next/script: it would load GTM after hydration. */}
+        {gtmId && <script id="consent-default" dangerouslySetInnerHTML={{ __html: consentDefaultScript }} />}
+        {gtmId && <script id="gtm" dangerouslySetInnerHTML={{ __html: gtmScript(gtmId) }} />}
+      </head>
+      <body>
+        {gtmId && (
+          <noscript>
+            <iframe
+              src={`https://www.googletagmanager.com/ns.html?id=${gtmId}`}
+              height="0"
+              width="0"
+              style={{ display: 'none', visibility: 'hidden' }}
+            />
+          </noscript>
+        )}
+        {children}
+        {gtmId && <CookieBanner />}
+      </body>
     </html>
   );
 }

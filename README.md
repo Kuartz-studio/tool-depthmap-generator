@@ -61,6 +61,8 @@ Then open http://localhost:3000.
 
 The app is fully static and works on any host that can serve a Next.js build. Set `NEXT_PUBLIC_SITE_URL` when you use a custom domain: it drives the canonical URL, the sitemap and the Open Graph tags. Keep the COOP/COEP headers from `next.config.ts`, they enable multithreaded WebAssembly.
 
+Analytics are off unless you set `NEXT_PUBLIC_GTM_ID`: Google Tag Manager then loads on the production deployment only, with Consent Mode v2 defaults (everything denied) and a consent banner.
+
 ## How it works
 
 ```mermaid
